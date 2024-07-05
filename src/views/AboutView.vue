@@ -7,20 +7,42 @@ import Categories from '../components/Categories.vue'
 
 
 <template>
-  
+  <div class="prova">
+  <div class="cat">
  <Suspense>
    <Categories />
  </Suspense>
+ </div>
+ <div class="prod">
+ <Suspense>
+   <Products />
+ </Suspense>
+  </div>
+  </div>
+
+<h2><center><router-link to="/">Home</router-link></center></h2>
 
 </template>
 
 
+
 <style>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
+  .cat {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: right;
   }
+  .prod {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-left: 300px;
+  }
+  .prova{
+    display: flex;
+  }
+  
+  
 }
 </style>

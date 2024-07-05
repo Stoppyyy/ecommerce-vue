@@ -5,11 +5,14 @@ import Categories from '../components/Categories.vue'
 </script>
 
 <template>
- 
+ <div class="cat">
  <Suspense>
    <Categories />
  </Suspense>
-
- <router-link to="/about">Info sito</router-link>
+  </div>
+ 
+  <h2><center><router-link to="/about">Info sito</router-link></center></h2>
   
 </template>
+
+
