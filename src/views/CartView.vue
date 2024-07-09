@@ -1,17 +1,18 @@
 <script setup>
 import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
+import Cart from '../components/Cart.vue'
 
 </script>
 
 <template>
- <div class="cat">
+ <div>
  <Suspense>
-   <Categories />
+   <Cart />
  </Suspense>
   </div>
  
-  <h2><center><router-link to="/about">Clicca qui per accedere al sito</router-link></center></h2>
+
   
 </template>
 

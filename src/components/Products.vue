@@ -4,22 +4,29 @@ import { getProducts } from '../app.js'
 const products = await getProducts();
 let sommaPrezzi = ref(0);
 
+
+
 function handleClick(prezzo){
 
   sommaPrezzi.value += prezzo;
- }
+  
+}
+
  
 </script>
 
 <template>
+
 <div class="carrello"> Carrello: {{sommaPrezzi.toFixed(2)}} € </div>
-<button class="clic" @click="">Vai al carrello</button>
+<button class="clic">
+<router-link to="/cart">Vai al carrello</router-link>
+</button>
 <h2>Prodotti:</h2>
 <ul v-for="prod in products" class="prodotti">
-    <div>{{prod.id}} {{prod.title}} </div>
+    <div> {{prod.title}} </div>
     <div class="desc"> Prezzo: {{prod.price}} € </div>
     <img class="immagini" :src="prod.image" alt="Product Image" />
-    <button class="clic" @click="handleClick(prod.price)">Acquista</button>
+    <button class="clic" @click="handleClick(prod.price)">Aggiungi al carrello</button>
 </ul>
 </template>
 <style>
@@ -42,7 +49,6 @@ function handleClick(prezzo){
     margin-top: 20px;
     font-size: 1.2em;
   }
-  
   .carrello{
 
         font-weight: bold; /* Rende il testo in grassetto */

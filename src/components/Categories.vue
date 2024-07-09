@@ -7,7 +7,7 @@ const categories = await getCategories();
 <h1>Categorie:</h1>
 <div class="cat">
  <ul v-for="category in categories">
-  <h1>{{category}}</h1>
+  <h2>{{category}}</h2>
  </ul>
 </div>
 </template>

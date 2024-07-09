@@ -29,9 +29,7 @@ import Categories from '../components/Categories.vue'
 <style>
 @media (min-width: 1024px) {
   .cat {
-    display: flex;
     flex-direction: column;
-    align-items: right;
   }
   .prod {
     display: flex;

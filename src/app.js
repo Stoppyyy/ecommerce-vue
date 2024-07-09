@@ -23,3 +23,5 @@ const getProductsByCategory = async (category) => {
   );
   return response.data;
 };
+
+
