@@ -24,4 +24,7 @@ const getProductsByCategory = async (category) => {
   return response.data;
 };
 
-
+const newProduct = async () => {
+  const response = await axios.get(`https://fakestoreapi.com/carts`);
+  return response.data;
+};

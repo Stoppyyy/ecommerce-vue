@@ -3,13 +3,17 @@ import { ref } from 'vue';
 import { getProducts } from '../app.js'
 const products = await getProducts();
 let sommaPrezzi = ref(0);
-
+let count = ref(0)
 
 
 function handleClick(prezzo){
 
   sommaPrezzi.value += prezzo;
   
+  return sommaPrezzi;
+}
+function increment() {  
+  count.value++;
 }
 
  
@@ -21,12 +25,13 @@ function handleClick(prezzo){
 <button class="clic">
 <router-link to="/cart">Vai al carrello</router-link>
 </button>
+<button class="clic"> {{ count }} </button>
 <h2>Prodotti:</h2>
 <ul v-for="prod in products" class="prodotti">
     <div> {{prod.title}} </div>
     <div class="desc"> Prezzo: {{prod.price}} € </div>
     <img class="immagini" :src="prod.image" alt="Product Image" />
-    <button class="clic" @click="handleClick(prod.price)">Aggiungi al carrello</button>
+    <button class="clic" @click="handleClick(prod.price); increment" >Aggiungi al carrello</button>
 </ul>
 </template>
 <style>
