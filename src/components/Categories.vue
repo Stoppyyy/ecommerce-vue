@@ -6,8 +6,8 @@ const categories = await getCategories();
 <template>
 <h1>Categorie:</h1>
 <div class="cat">
- <ul v-for="category in categories">
-  <h2>{{category}}</h2>
+ <ul >
+  <h2><router-link to="/electronics"> 1 </router-link></h2>
  </ul>
 </div>
 </template>
