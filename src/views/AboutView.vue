@@ -1,7 +1,7 @@
 <script setup>
 import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
-
+import Cart from '../components/Cart.vue'
 </script>
 
 
@@ -9,12 +9,15 @@ import Categories from '../components/Categories.vue'
 <template>
   <div class="prova">
   <div class="cat">
- <Suspense>
+  <Suspense>
    <Categories />
  </Suspense>
  </div>
  <div class="prod">
- <Suspense>
+  <Suspense>
+   <Cart />
+  </Suspense>
+  <Suspense>
    <Products />
  </Suspense>
   </div>

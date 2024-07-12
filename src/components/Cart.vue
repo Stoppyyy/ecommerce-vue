@@ -1,15 +1,22 @@
 <script setup>
 import { ref } from 'vue';
+import { getProducts } from '../app.js'
+const products = await getProducts();
+let sommaPrezzi = ref(0);
+let count = ref(0);
+
+
 
 </script>
 
 
 
 <template>
-<h1><center>Carrello:</center></h1>
-<div class="datiCarrello">
-<h3><center><button class="clic"> </button></center></h3>
-</div>
+<div class="carrello"> Carrello: {{sommaPrezzi.toFixed(2)}} € </div>
+<div class="carrello"> Numero prodotti selezionati: {{count}}  </div>
+<button class="clic">
+<router-link to="/cart">Vai al carrello</router-link>
+</button>
 
 </template>
 
@@ -17,7 +24,7 @@ import { ref } from 'vue';
 
 <style>
 .datiCarrello{
-    .margin-top: 50px;
+    margin-top: 50px;
 }
 .clic{
     display: block;

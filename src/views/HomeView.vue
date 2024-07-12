@@ -11,7 +11,7 @@ import Categories from '../components/Categories.vue'
  </Suspense>
   </div>
  
-  <h2><center><router-link to="/about">Clicca qui per accedere al sito</router-link></center></h2>
+  <h2><center><router-link to="/about">Clicca qui per visualizzare tutti i prodotti</router-link></center></h2>
   
 </template>
 

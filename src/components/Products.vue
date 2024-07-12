@@ -5,37 +5,31 @@ const products = await getProducts();
 let sommaPrezzi = ref(0);
 let count = ref(0);
 
-
 function handleClick(prezzo){
+      console.log(sommaPrezzi)
+      sommaPrezzi.value += prezzo;
+      count.value++;
+       this.$emit('sommaPrezzi', sommaPrezzi)
+    }
 
-  sommaPrezzi.value += prezzo;
-
-  count.value++;
-  
-  return sommaPrezzi;
-}
-
-
- 
 </script>
+
 
 <template>
 
-<div class="carrello"> Carrello: {{sommaPrezzi.toFixed(2)}} € </div>
-<button class="clic">
-<router-link to="/cart">Vai al carrello</router-link>
-</button>
-<div class="carrello"> Numero prodotti selezionati: {{count}}  </div>
+
 <h2>Prodotti:</h2>
 <ul v-for="prod in products" class="prodotti">
     <div> {{prod.title}} </div>
     <div class="desc"> Prezzo: {{prod.price}} € </div>
     <img class="immagini" :src="prod.image" alt="Product Image" />
-    <button class="clic" @click="handleClick(prod.price); increment" >Aggiungi al carrello</button>
+    <button class="clic" @click="handleClick(prod.price)" >Aggiungi al carrello</button>
 </ul>
 
 
 </template>
+
+
 <style>
 .prodotti {
     display: flex;

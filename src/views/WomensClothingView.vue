@@ -1,7 +1,7 @@
 <script setup>
 import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
-import Electronics from '../components/Electronics.vue'
+import WomensClothing from '../components/WomensClothing.vue'
 import Cart from '../components/Cart.vue'
 </script>
 
@@ -14,7 +14,7 @@ import Cart from '../components/Cart.vue'
    <Cart />
   </Suspense>
   <Suspense>
-   <Electronics />
+   <WomensClothing />
  </Suspense>
   </div>
   </div>

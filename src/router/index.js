@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -34,7 +35,24 @@ const router = createRouter({
       name: 'electronics',
       component: () => import('../views/ElectronicsView.vue')
     },
+    {
+      path: '/jewelery',
+      name: "jewelery",
+      component: () => import('../views/JeweleryView.vue')
+    },
+    {
+      path: '/mens-clothing',
+      name: "men's clothing",
+      component: () => import('../views/MensClothingView.vue')
+    },
+    {
+      path: '/womens-clothing',
+      name: "women's clothing",
+      component: () => import('../views/WomensClothingView.vue')
+    },
   ]
 })
 
-export default router
+export default router;
+
+

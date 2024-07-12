@@ -15,7 +15,7 @@ let count = ref(0);
 // Computed property per filtrare i prodotti
 const filteredProducts = computed(() => {
   console.log('Filtering products');
-  return products.value.filter(prod => prod.category === 'electronics');
+  return products.value.filter(prod => prod.category === 'jewelery');
 });
 
 // Metodo per gestire il click sul bottone
