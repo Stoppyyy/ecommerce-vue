@@ -18,16 +18,21 @@ const filteredProducts = computed(() => {
   return products.value.filter(prod => prod.category === "men's clothing");
 });
 
-// Metodo per gestire il click sul bottone
-const handleClick = (prezzo) => {
-  sommaPrezzi.value += prezzo;
-  count.value++;
-};
+const emit = defineEmits(['sommaPrezzi']);
+
+function handleClick(prezzo){
+      console.log(sommaPrezzi)
+      sommaPrezzi.value += prezzo;
+      count.value++;
+      emit('sommaPrezzi', sommaPrezzi.value);
+    }
 </script>
 
 <template>
   <div>
-    
+    <button class="clic">
+    <router-link to="/cart">Vai al carrello</router-link>
+    </button>
     <h2>Prodotti:</h2>
     <ul v-for="prod in filteredProducts" :key="prod.id" class="prodotti">
       <div> {{ prod.title }} </div>

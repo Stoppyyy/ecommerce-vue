@@ -1,15 +1,17 @@
 <script setup>
 import { ref } from 'vue';
-import { getProducts } from '../app.js'
+import { getProducts } from '../app.js';
+import Cart from '../components/Cart.vue';
 const products = await getProducts();
 let sommaPrezzi = ref(0);
 let count = ref(0);
+const emit = defineEmits(['sommaPrezzi']);
 
 function handleClick(prezzo){
       console.log(sommaPrezzi)
       sommaPrezzi.value += prezzo;
       count.value++;
-       this.$emit('sommaPrezzi', sommaPrezzi)
+      emit('sommaPrezzi', sommaPrezzi.value);
     }
 
 </script>
@@ -17,15 +19,19 @@ function handleClick(prezzo){
 
 <template>
 
-
+<button class="clic">
+<router-link to="/cart">Vai al carrello</router-link>
+</button>
 <h2>Prodotti:</h2>
-<ul v-for="prod in products" class="prodotti">
-    <div> {{prod.title}} </div>
-    <div class="desc"> Prezzo: {{prod.price}} € </div>
-    <img class="immagini" :src="prod.image" alt="Product Image" />
-    <button class="clic" @click="handleClick(prod.price)" >Aggiungi al carrello</button>
-</ul>
-
+<ul>
+    <li v-for="prod in products" :key="prod.id" class="prodotti">
+      <div>{{ prod.title }}</div>
+      <div class="desc">Prezzo: {{ prod.price }} €</div>
+      <img class="immagini" :src="prod.image" alt="Product Image" />
+      <button class="clic" @click="handleClick(prod.price)">Aggiungi al carrello</button>
+    </li>
+  </ul>
+  <Cart :sommaPrezzi="sommaPrezzi" :count="count" />
 
 </template>
 

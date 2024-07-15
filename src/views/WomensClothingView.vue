@@ -3,6 +3,8 @@ import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
 import WomensClothing from '../components/WomensClothing.vue'
 import Cart from '../components/Cart.vue'
+
+
 </script>
 
 

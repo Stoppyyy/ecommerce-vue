@@ -4,8 +4,18 @@ import { getProducts } from '../app.js'
 const products = await getProducts();
 let sommaPrezzi = ref(0);
 let count = ref(0);
+import { defineProps } from 'vue';
 
-
+const props = defineProps({
+  sommaPrezzi: {
+    type: Number,
+    required: true
+  },
+  count: {
+    type: Number,
+    required: true
+  }
+});
 
 </script>
 
@@ -14,9 +24,7 @@ let count = ref(0);
 <template>
 <div class="carrello"> Carrello: {{sommaPrezzi.toFixed(2)}} € </div>
 <div class="carrello"> Numero prodotti selezionati: {{count}}  </div>
-<button class="clic">
-<router-link to="/cart">Vai al carrello</router-link>
-</button>
+
 
 </template>
 
