@@ -25,6 +25,7 @@ function handleClick(prezzo){
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
+      console.log(sommaPrezzi);
     }
 </script>
 

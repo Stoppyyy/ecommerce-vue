@@ -1,9 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import { getProducts } from '../app.js'
-const products = await getProducts();
-let sommaPrezzi = ref(0);
-let count = ref(0);
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -16,25 +11,18 @@ const props = defineProps({
     required: true
   }
 });
-
 </script>
 
-
-
 <template>
-<div class="carrello"> Carrello: {{sommaPrezzi.toFixed(2)}} € </div>
-<div class="carrello"> Numero prodotti selezionati: {{count}}  </div>
-
-
+  <div class="carrello"> Carrello: {{ sommaPrezzi }} € </div>
+  <div class="carrello"> Numero prodotti selezionati: {{ count }}  </div>
 </template>
 
-
-
 <style>
-.datiCarrello{
+.datiCarrello {
     margin-top: 50px;
 }
-.clic{
+.clic {
     display: block;
     width: 200px;
     padding: 20px;
@@ -45,8 +33,8 @@ const props = defineProps({
     color: black;
     margin-top: 20px;
     cursor: pointer;
-  }
-  .clic:hover{
-            background-color: #e0e0e0;
-        }
+}
+.clic:hover {
+    background-color: #e0e0e0;
+}
 </style>

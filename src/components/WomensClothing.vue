@@ -21,10 +21,10 @@ const filteredProducts = computed(() => {
 const emit = defineEmits(['sommaPrezzi']);
 
 function handleClick(prezzo){
-      console.log(sommaPrezzi)
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
+      console.log(sommaPrezzi);
     }
 </script>
 

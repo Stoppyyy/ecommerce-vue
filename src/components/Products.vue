@@ -8,10 +8,11 @@ let count = ref(0);
 const emit = defineEmits(['sommaPrezzi']);
 
 function handleClick(prezzo){
-      console.log(sommaPrezzi)
+      sommaPrezzi.value = Math.round(sommaPrezzi.value * 100) / 100;
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
+      console.log(sommaPrezzi);
     }
 
 </script>
@@ -58,7 +59,7 @@ function handleClick(prezzo){
   }
   .carrello{
 
-        font-weight: bold; /* Rende il testo in grassetto */
+        font-weight: bold; 
         margin-top: 20px;
         font-size: 1.5em;
   }
