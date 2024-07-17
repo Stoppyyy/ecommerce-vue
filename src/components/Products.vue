@@ -8,18 +8,16 @@ let count = ref(0);
 const emit = defineEmits(['sommaPrezzi']);
 
 function handleClick(prezzo){
-      sommaPrezzi.value = Math.round(sommaPrezzi.value * 100) / 100;
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
-      console.log(sommaPrezzi);
     }
 
 </script>
 
 
 <template>
-
+<Cart :sommaPrezzi="sommaPrezzi" :count="count" />
 <button class="clic">
 <router-link to="/cart">Vai al carrello</router-link>
 </button>
@@ -32,7 +30,7 @@ function handleClick(prezzo){
       <button class="clic" @click="handleClick(prod.price)">Aggiungi al carrello</button>
     </li>
   </ul>
-  <Cart :sommaPrezzi="sommaPrezzi" :count="count" />
+  
 
 </template>
 

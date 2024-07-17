@@ -1,20 +1,28 @@
 <script setup>
 import { defineProps } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
   sommaPrezzi: {
     type: Number,
-    required: true
+    required: true,
+    default: 0,
   },
   count: {
     type: Number,
-    required: true
-  }
+    required: true,
+    default: 0,
+  },
 });
+
+const sommaPrezziRounded = computed(() => {
+  return props.sommaPrezzi.toFixed(2);
+});
+
 </script>
 
 <template>
-  <div class="carrello"> Carrello: {{ sommaPrezzi }} € </div>
+  <div class="carrello"> Carrello: {{ sommaPrezziRounded }} € </div>
   <div class="carrello"> Numero prodotti selezionati: {{ count }}  </div>
 </template>
 

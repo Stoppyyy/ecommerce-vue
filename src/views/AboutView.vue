@@ -15,9 +15,6 @@ import Cart from '../components/Cart.vue'
  </div>
  <div class="prod">
   <Suspense>
-   <Cart />
-  </Suspense>
-  <Suspense>
    <Products />
  </Suspense>
   </div>

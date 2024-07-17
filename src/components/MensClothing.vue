@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import Cart from '../components/Cart.vue';
 import { getProducts, getCategories } from '../app.js';
 
 const products = ref([]);
@@ -14,7 +15,6 @@ let count = ref(0);
 
 // Computed property per filtrare i prodotti
 const filteredProducts = computed(() => {
-  console.log('Filtering products');
   return products.value.filter(prod => prod.category === "men's clothing");
 });
 
@@ -24,11 +24,11 @@ function handleClick(prezzo){
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
-      console.log(sommaPrezzi);
     }
 </script>
 
 <template>
+  <Cart :sommaPrezzi="sommaPrezzi" :count="count" />
   <div>
     <button class="clic">
     <router-link to="/cart">Vai al carrello</router-link>

@@ -50,7 +50,10 @@ const router = createRouter({
       name: "women's clothing",
       component: () => import('../views/WomensClothingView.vue')
     },
-  ]
+  ],
+
+  
+
 })
 
 export default router;

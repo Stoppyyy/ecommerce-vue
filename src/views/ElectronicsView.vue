@@ -13,9 +13,6 @@ import Cart from '../components/Cart.vue'
   <div class="prova">
  <div class="prod">
   <Suspense>
-   <Cart />
-  </Suspense>
-  <Suspense>
    <Electronics />
  </Suspense>
   </div>
