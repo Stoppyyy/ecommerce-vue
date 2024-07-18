@@ -14,3 +14,14 @@ const categories = await getCategories();
  </ul>
 </div>
 </template>
+
+<style scoped>
+a {
+  color: inherit; 
+  text-decoration: none; 
+}
+a:hover {
+  color: blue; /* Change color to blue on hover */
+  text-decoration: none; /* Keep underline removed on hover */
+}
+</style>

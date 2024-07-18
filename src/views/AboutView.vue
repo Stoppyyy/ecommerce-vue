@@ -19,9 +19,6 @@ import Cart from '../components/Cart.vue'
  </Suspense>
   </div>
   </div>
-
-<h2><center><router-link to="/">Home</router-link></center></h2>
-
 </template>
 
 

@@ -29,10 +29,10 @@ function handleClick(prezzo){
 
 <template>
   <Cart :sommaPrezzi="sommaPrezzi" :count="count" />
-  <div>
-    <button class="clic">
-    <router-link to="/cart">Vai al carrello</router-link>
-    </button>
+<router-link
+      :to="{ name: 'cart', params: { sommaPrezzi: sommaPrezzi, count: count } }" class="clic">
+      Vai al carrello
+    </router-link>
     <h2>Prodotti:</h2>
     <ul v-for="prod in filteredProducts" :key="prod.id" class="prodotti">
       <div> {{ prod.title }} </div>
@@ -40,7 +40,6 @@ function handleClick(prezzo){
       <img class="immagini" :src="prod.image" alt="Product Image" />
       <button class="clic" @click="handleClick(prod.price)">Aggiungi al carrello</button>
     </ul>
-  </div>
 </template>
 
 <style scoped>

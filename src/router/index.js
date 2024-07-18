@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import Cart from '../components/Cart.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,11 +50,17 @@ const router = createRouter({
       name: "women's clothing",
       component: () => import('../views/WomensClothingView.vue')
     },
+    {
+      path: '/cart/:sommaPrezzi/:count',
+      name: 'cart',
+      component: Cart,
+      props: route => ({
+        sommaPrezzi: Number(route.params.sommaPrezzi),
+        count: Number(route.params.count),
+      }),
+    },
   ],
-
-  
-
-})
+});
 
 export default router;
 

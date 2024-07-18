@@ -10,9 +10,21 @@ import Categories from '../components/Categories.vue'
    <Categories />
  </Suspense>
   </div>
- 
-  <h2><center><router-link to="/about">Clicca qui per visualizzare tutti i prodotti</router-link></center></h2>
-  
+
+<h2><center><router-link to="/about"> Clicca qui per accedere al negozio </router-link></center></h2>
 </template>
+
+<style scoped>
+a {
+  color: inherit; 
+  text-decoration: none; 
+}
+a:hover {
+  color: blue; 
+  text-decoration: none; 
+}
+</style>
+  
+
 
 

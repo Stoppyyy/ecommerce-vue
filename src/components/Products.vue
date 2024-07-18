@@ -1,26 +1,30 @@
 <script setup>
 import { ref } from 'vue';
 import { getProducts } from '../app.js';
+import { useRouter } from 'vue-router';
 import Cart from '../components/Cart.vue';
+
 const products = await getProducts();
 let sommaPrezzi = ref(0);
 let count = ref(0);
+const router = useRouter();
 const emit = defineEmits(['sommaPrezzi']);
 
 function handleClick(prezzo){
       sommaPrezzi.value += prezzo;
       count.value++;
       emit('sommaPrezzi', sommaPrezzi.value);
-    }
+  }
 
 </script>
 
 
 <template>
 <Cart :sommaPrezzi="sommaPrezzi" :count="count" />
-<button class="clic">
-<router-link to="/cart">Vai al carrello</router-link>
-</button>
+<router-link
+      :to="{ name: 'cart', params: { sommaPrezzi: sommaPrezzi, count: count } }" class="clic">
+      Vai al carrello
+    </router-link>
 <h2>Prodotti:</h2>
 <ul>
     <li v-for="prod in products" :key="prod.id" class="prodotti">
