@@ -3,7 +3,7 @@ import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
 import MensClothing from '../components/MensClothing.vue'
 import Cart from '../components/Cart.vue'
-
+import { useCartStore } from './stores/cart';
 
 </script>
 

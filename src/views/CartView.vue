@@ -8,9 +8,11 @@ import Cart from '../components/Cart.vue'
  <Suspense>
    <Cart />
  </Suspense>
-  </div>
- 
-
+  
+  <h2>Prova</h2>
+  
+</div>
+  
   
 </template>
 

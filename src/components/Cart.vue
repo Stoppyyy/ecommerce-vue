@@ -24,6 +24,7 @@ const sommaPrezziRounded = computed(() => {
 <template>
   <div class="carrello"> Carrello: {{ sommaPrezziRounded }} € </div>
   <div class="carrello"> Numero prodotti selezionati: {{ count }}  </div>
+  
 </template>
 
 <style>
