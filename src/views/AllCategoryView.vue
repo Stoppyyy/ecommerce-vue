@@ -1,9 +1,8 @@
 <script setup>
 import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
-import MensClothing from '../components/MensClothing.vue'
+import AllCategory from '../components/AllCategory.vue'
 import Cart from '../components/Cart.vue'
-import { useCartStore } from './stores/cart';
 
 </script>
 
@@ -13,7 +12,7 @@ import { useCartStore } from './stores/cart';
   <div class="prova">
  <div class="prod">
   <Suspense>
-   <MensClothing />
+   <AllCategory />
  </Suspense>
   </div>
   </div>

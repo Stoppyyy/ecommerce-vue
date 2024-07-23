@@ -10,13 +10,6 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-    /*
-    {
-      path: '/product/:id',
-      name: 'product',
-      component: ProductView
-    },
-    */
     {
       path: '/about',
       name: 'about',
@@ -31,33 +24,11 @@ const router = createRouter({
       component: () => import('../views/CartView.vue')
     },
     {
-      path: '/electronics',
-      name: 'electronics',
-      component: () => import('../views/ElectronicsView.vue')
-    },
-    {
-      path: '/jewelery',
-      name: "jewelery",
-      component: () => import('../views/JeweleryView.vue')
-    },
-    {
-      path: '/mens-clothing',
-      name: "men's clothing",
-      component: () => import('../views/MensClothingView.vue')
-    },
-    {
-      path: '/womens-clothing',
-      name: "women's clothing",
-      component: () => import('../views/WomensClothingView.vue')
-    },
-    {
-      path: '/cart/:sommaPrezzi/:count',
-      name: 'cart',
-      component: Cart,
-      props: route => ({
-        sommaPrezzi: Number(route.params.sommaPrezzi),
-        count: Number(route.params.count),
-      }),
+      path: '/category/:name',
+      name: 'category',
+      component: () => import('../views/AllCategoryView.vue'),
+      props: true,
+      const: props = defineProps('name')
     },
   ],
 });

@@ -6,11 +6,8 @@ const categories = await getCategories();
 <template>
 <h1>Filtra per categorie:</h1>
 <div class="cat">
- <ul >
-  <h2><router-link to="/electronics"> electronics </router-link></h2>
-  <h2><router-link to="/jewelery"> jewerely </router-link></h2>
-  <h2><router-link to="/mens-clothing"> men's clothing </router-link></h2>
-  <h2><router-link to="/womens-clothing"> women's clothing </router-link></h2>
+ <ul>
+  <li v-for="category in categories"><router-link :to="`/category/${category}`"> {{ category }} </router-link></li>
  </ul>
 </div>
 </template>

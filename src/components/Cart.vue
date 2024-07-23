@@ -1,29 +1,17 @@
 <script setup>
-import { defineProps } from 'vue';
-import { computed } from 'vue';
+import { useCartStore } from '../stores/cart.js';
+const cartStore = useCartStore();
 
-const props = defineProps({
-  sommaPrezzi: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  count: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-});
-
-const sommaPrezziRounded = computed(() => {
-  return props.sommaPrezzi.toFixed(2);
-});
-
+const getTotalQuantity = () => {
+  return cartStore.lines.map(i => i.qty).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+const getTotalPrice = () => { return cartStore.lines.reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.qty), 0);
+}
 </script>
 
 <template>
-  <div class="carrello"> Carrello: {{ sommaPrezziRounded }} € </div>
-  <div class="carrello"> Numero prodotti selezionati: {{ count }}  </div>
+  <div class="carrello"> Carrello: {{ getTotalPrice() }} € </div>
+  <div class="carrello"> Numero prodotti da acquistare: {{ getTotalQuantity() }}  </div>
   
 </template>
 

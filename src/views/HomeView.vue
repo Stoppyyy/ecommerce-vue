@@ -1,30 +1,36 @@
 <script setup>
 import Products from '../components/Products.vue'
 import Categories from '../components/Categories.vue'
-
 </script>
 
 <template>
- <div class="cat">
- <Suspense>
+  <div class="prova">
+  <div class="cat">
+  <Suspense>
    <Categories />
  </Suspense>
+ </div>
+ <div class="prod">
+  <Suspense>
+   <Products />
+ </Suspense>
   </div>
-
-<h2><center><router-link to="/about"> Clicca qui per accedere al negozio </router-link></center></h2>
+  </div>
 </template>
 
-<style scoped>
-a {
-  color: inherit; 
-  text-decoration: none; 
-}
-a:hover {
-  color: blue; 
-  text-decoration: none; 
-}
+<style>
+@media (min-width: 1024px) {
+  .cat {
+    flex-direction: column;
+  }
+  .prod {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-left: 300px;
+  }
+  .prova{
+    display: flex;
+  }
+ }
 </style>
-  
-
-
-
