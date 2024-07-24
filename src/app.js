@@ -36,14 +36,15 @@ export function handleClick(prod) {
     cartStore.lines[existingIdx].qty += 1;
     console.log(`Quantità del prodotto con id ${prod.id}  ${JSON.stringify(cartStore.lines[existingIdx].qty)}`);
   } else {
-    cartStore.lines.push({ item: prod, qty: 1, price: prod.price });
+    cartStore.lines.push({ item: prod, qty: 1 });
     console.log(`Prodotto con id ${prod.id} aggiunto al carrello con quantità: 1`);
   }
 
-  count = cartStore.lines.map(i => i.qty).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const totalQuantity = cartStore.lines.map(i => i.qty).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   console.log('Totale prodotti nel carrello:', totalQuantity)
 
-  const totalPrice = cartStore.lines.reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.qty), 0);
+  const totalPrice = cartStore.lines.reduce((accumulator, currentValue) => accumulator + (currentValue.item.price * currentValue.qty), 0);
   console.log('Prezzo totale nel carrello:', totalPrice);
 }
+
+

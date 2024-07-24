@@ -1,24 +1,18 @@
 <script setup>
-import Products from '../components/Products.vue'
-import Categories from '../components/Categories.vue'
-import AllCategory from '../components/AllCategory.vue'
-import Cart from '../components/Cart.vue'
+import AllCategory from "../components/AllCategory.vue";
 
+const props = defineProps(["name"]);
 </script>
-
-
 
 <template>
   <div class="prova">
- <div class="prod">
-  <Suspense>
-   <AllCategory />
- </Suspense>
-  </div>
+    <div class="prod">
+      <Suspense>
+        <AllCategory :name="props.name" />
+      </Suspense>
+    </div>
   </div>
 </template>
-
-
 
 <style>
 @media (min-width: 1024px) {
@@ -31,10 +25,8 @@ import Cart from '../components/Cart.vue'
     align-items: right;
     margin-left: 300px;
   }
-  .prova{
+  .prova {
     display: flex;
   }
-  
-  
 }
 </style>

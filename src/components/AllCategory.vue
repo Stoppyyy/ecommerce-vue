@@ -1,25 +1,10 @@
 <script setup>
-import Products from './Products.vue';
-import Categories from '../components/Categories.vue'
 import Cart from '../components/Cart.vue';
 import { handleClick } from '../app.js';
 import { getProductsByCategory } from '../app.js';
-import { ref, onMounted, watch } from 'vue';
 
-const props = defineProps(['category']);
-const products = ref([]);
-
-const fetchProducts = async (category) => {
-  products.value = await getProductsByCategory(category);
-};
-
-onMounted(() => {
-  fetchProducts(props.category);
-});
-
-watch(() => props.category, (newCategory) => {
-  fetchProducts(newCategory);
-});
+const props = defineProps(['name']);
+const products = await getProductsByCategory(props.name);
 </script>
 
 <template>

@@ -28,7 +28,12 @@ const router = createRouter({
       name: 'category',
       component: () => import('../views/AllCategoryView.vue'),
       props: true,
-      const: props = defineProps('name')
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import('../views/ProductDetailView.vue'),
+      props: true,
     },
   ],
 });
